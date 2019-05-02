@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Switch, Route } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import CountryList from "./components/CountryList";
@@ -15,9 +15,7 @@ class App extends Component {
         <div className="container">
           <div className="row">
             <CountryList />
-            <Switch>
-              <Route path="/:cca3" component={CountryDetail} />
-            </Switch>
+            <Route path="/:cca3" component={CountryDetail} />
           </div>
         </div>
       </div>
