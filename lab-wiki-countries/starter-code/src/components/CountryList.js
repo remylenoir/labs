@@ -8,10 +8,14 @@ export default class CountryList extends Component {
       <Fragment>
         <div className="col-5" style={{ maxHeight: "90vh", overflow: "scroll" }}>
           <div className="list-group">
-            {countries.map((el, i) => {
+            {countries.map(country => {
               return (
-                <Link key={i} to={`/${el.cca3}`} className="list-group-item list-group-item-action">
-                  {el.flag} {el.name.common}
+                <Link
+                  key={country.cca3}
+                  to={"/" + country.cca3}
+                  className="list-group-item list-group-item-action"
+                >
+                  <span role="img">{country.flag}</span> {country.name.common}
                 </Link>
               );
             })}
